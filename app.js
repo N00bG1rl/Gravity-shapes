@@ -2,8 +2,8 @@
 const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter
 
 // Declare width and height
-const width = 800
-const height = 600
+const width = window.innerWidth
+const height = window.innerHeight
 
 // Create world/canvas
 const engine = Engine.create()
@@ -30,21 +30,32 @@ World.add(
 )
 
 // Walls array to define world borders so shapes stays inside world
+/* const walls = [
+  // Top wall
+  Bodies.rectangle(400, 0, 800, 20, { isStatic: true }),
+  // Bottom wall
+  Bodies.rectangle(400, 600, 800, 20, { isStatic: true }),
+  // Left wall
+  Bodies.rectangle(0, 300, 20, 600, { isStatic: true }),
+  // Right wall
+  Bodies.rectangle(800, 300, 20, 600, { isStatic: true }),
+] */
+// Walls array to define world borders so shapes stays inside world
 const walls = [
   // Top wall
-  Bodies.rectangle(400, 0, 800, 40, { isStatic: true }),
+  Bodies.rectangle(width / 2, 0, width, 20, { isStatic: true }),
   // Bottom wall
-  Bodies.rectangle(400, 600, 800, 40, { isStatic: true }),
+  Bodies.rectangle(width / 2, height, width, 20, { isStatic: true }),
   // Left wall
-  Bodies.rectangle(0, 300, 40, 600, { isStatic: true }),
+  Bodies.rectangle(0, height / 2, 20, height, { isStatic: true }),
   // Right wall
-  Bodies.rectangle(800, 300, 40, 600, { isStatic: true }),
+  Bodies.rectangle(width, height / 2, 20, height, { isStatic: true }),
 ]
-
 // Add walls array to the world
 World.add(world, walls)
+
 // Add random shapes to random locations into world
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 100; i++) {
   if (Math.random() > 0.5) {
     World.add(
       world,
