@@ -30,17 +30,6 @@ World.add(
 )
 
 // Walls array to define world borders so shapes stays inside world
-/* const walls = [
-  // Top wall
-  Bodies.rectangle(400, 0, 800, 20, { isStatic: true }),
-  // Bottom wall
-  Bodies.rectangle(400, 600, 800, 20, { isStatic: true }),
-  // Left wall
-  Bodies.rectangle(0, 300, 20, 600, { isStatic: true }),
-  // Right wall
-  Bodies.rectangle(800, 300, 20, 600, { isStatic: true }),
-] */
-// Walls array to define world borders so shapes stays inside world
 const walls = [
   // Top wall
   Bodies.rectangle(width / 2, 0, width, 20, { isStatic: true }),
